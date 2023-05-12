@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title></title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <style>
+  .navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.header_bar {
+    position: top;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  background-color: blue;
+    text-align: center;
+    }
+
+.footer_bar {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: blue;
+   text-align: center;
+}
+</style>
+</head>
+<body style="background-color:#fff;">
+<div th:replace="fragments/navbar :: navbar_header"></div>
+<div th:replace="fragments/navbar :: navbar_menu"></div>
+<form th:action="@{/purchasePdfData}" th:object="${purchase}" method="POST">
+  <table style="width:100%">
+    <tr >
+      <th rowspan="2"><h1 class="company_name"><center><font color="green ">
+        <b>L.S MILK TRADERS</b> </font></center></h1></th>
+      <td>phone </td>
+
+    </tr>
+    <tr><td>email</td></tr>
+
+    <tr>
+      <th rowspan="1"><font color="red ">
+        <b>2-2-1183/1/3 SIDDHARTHA CASTLE SHIVAM ROAD NEW NALLAKUNTA HYDERABAD - 500044</b> </font></th>
+      <td rowspan="1"></td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">Orginal For Recept</td>
+    </tr>
+    <tr>
+      <td colspan="2">Orginal For Recept</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Pan No:ABCDE1503K</td>
+    </tr>
+    <tr>
+      <td rowspan="2"></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><center>Tax Invoice</center></td>
+    </tr>
+    <tr>
+      <td rowspan="1">Code</td>
+    </tr>
+    <tr>
+      <th rowspan="">Customer Name & Billing Address</th>
+      <th rowspan="">Inv.Number:</th>
+      <th rowspan="">Date:</th>
+
+    </tr>
+    <tr>
+      <td rowspan="1"><b></b>
+        <p></p><p></p></td>
+      <td colspan="2"><b></b><p></p>
+        <p></p><p></p></td>
+    </tr>
+    <tr>
+      <td colspan="3">Destination
+        <p>Shiping Mode:</p></td>
+      <td colspan="6"><b>Shiping Address:</b><p></p>
+        <p></p><p></p></td>
+    </tr>
+    <tr>
+      <th>S.No</th>
+<!--      <th>Description</th>-->
+      <th>Fat</th>
+      <th>Snf</th>
+      <th>Qty</th>
+<!--      <th>Unit</th>-->
+      <th>Item Rate</th>
+      <th>Item Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each=" lists: ${list}">
+    <td></td>
+      <td scope="col"><span th:text="${lists.fatP}"></span></td>
+      <td scope="col"><span th:text="${lists.snfP}"></span></td>
+      <td scope="col"><span th:text="${lists.quantity}"></span></td>
+      <td scope="col"><span th:text="${lists.ltrRate}"></span></td>
+      <td scope="col"><span th:text="${lists.amt}"></span></td>
+
+    <tr>
+      <td colspan="3">
+      </td>
+      <td colspan="6"><b></b><p></p>
+        <p></p><p></p></td>
+    </tr>
+  </table>
+  <div class="invoice-footer">
+    <p><b><center>Branch Office:H.No:48-11/1-5/8B,Floor1,Vallabhaneni Arcade,Guttikonda Dhanjuya Rao Street Currency Nagar,Vijayawada-520008-Andhra Pradesh</center></b></p>
+  </div>
+</form>
+<div th:replace="fragments/navbar :: navbar_footer"></div>
+</body>
+</html>
+
