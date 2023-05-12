@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface PurchaseOrderRepository extends CrudRepository<purchaseOrder,Integer> {
-   List<purchaseOrder> findByOrderBySlNo();
-   List<purchaseOrder> findByOrderByAmtDesc();
+  // List<purchaseOrder> findByOrderBySlNo();
+  // List<purchaseOrder> findByOrderByAmtDesc();
    //   @Query("select count(*) from  purchase_order where supplier=?1 and recDate=?2")
 //   Integer findBySupplierAndRecDate(String supplier,LocalDate recDate);
    @Query("select count(*) from  purchase_order where supplier=?1 and invDate=?2")

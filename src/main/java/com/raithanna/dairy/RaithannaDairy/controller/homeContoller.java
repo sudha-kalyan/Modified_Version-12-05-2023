@@ -41,7 +41,7 @@ public class homeContoller {
         System.out.println(password);
         List<String> messages = new ArrayList<>();
 
-            userModel user = userModelRepository.findByMobileAndPassword(mobile, password);
+            userModel user = userModelRepository.findByLoginIDAndPassword(mobile, password);
             if (user == null) {
                 messages.add("Account not found! retry ");
                 model.addAttribute("messages", messages);
@@ -81,7 +81,7 @@ public class homeContoller {
         System.out.println(oldPassword);
         System.out.println(newPassword);
 //        System.out.println(con_password);
-        userModel userModel = userModelRepository.findByMobileAndPassword(mobileNo, oldPassword);
+        userModel userModel = userModelRepository.findByLoginIDAndPassword(mobileNo, oldPassword);
 
         if(userModel!=null)
         {

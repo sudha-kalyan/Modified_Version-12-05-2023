@@ -24,14 +24,15 @@ public class customer {
     @GeneratedValue
     private Integer id;
     private String custName;
-    private String code;
+    private String custCode;
     @Max(10)
     private String mobileNo;
     private String Email;
-    private int custno;
+    private int custSeries;
     private String custAddr1;
-    private String custAddr2;
+    private String custAddr2;//Area Code-Destination
     private String custAddr3;
     private String custPostCode;
+    private String custGst;
 
 }

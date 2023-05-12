@@ -105,6 +105,54 @@
   padding:3px;
   background-colour:#fff;
   }
+  input#shipAddress1{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
+  input#shipAddress2{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
+  input#shipAddress3{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
+  input#shipMobile{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
+  input#shippinCode{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
+  input#shipdistance{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
  .inputError{
   background-color: #f4bfbf;
   border: 1px solid #d03e3e;
@@ -187,6 +235,40 @@
                         <input type="text"  name="pinCode" id="pinCode" th:field="*{pinCode}" class="form-control"/>
                     </div>
                 </div>
+                    <br>
+                    <h4 class = "text-middle"> <font color="#000080 ">
+                        <b>Shipping Address</b> </font></h4>
+                    <hr>
+                    <div class="row auto-align">
+                        <br>
+                        <div class="col">
+                            <label> ShippAddress1</label>
+                            <input  type="text" name="shipAddress1" id="shipAddress1" th:field="*{shipAddress1}"  class="form-control"/>
+                        </div>
+                        <div class="col">
+                            <label> ShippAddress2</label>
+                            <input  type="text" name="shipAddress2" id="shipAddress2" th:field="*{shipAddress2}"  class="form-control"/>
+                        </div>
+                        <div class="col">
+                            <label> ShippAddress3</label>
+                            <input type="text" name="shipAddress3" id="shipAddress3"  th:field="*{shipAddress3}" class="form-control"/>
+                        </div>
+                        <div class="col">
+                            <label>Shipp MobileNo</label>
+                            <input type="text"  name="shipMobile" id="shipMobile" th:field="*{shipMobile}" class="form-control"/>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row auto-align">
+                        <div class="col">
+                            <label>Shipp Pin</label>
+                            <input type="text"  name="shippinCode" id="shippinCode" th:field="*{shippinCode}" class="form-control"/>
+                        </div>
+                        <div class="col-9">
+                            <label>Shipp Distance</label>
+                            <input type="text"  name="shipdistance" id="shipdistance" th:field="*{shipdistance}" class="form-control"/>
+                        </div>
+                    </div>
                     <br>
                         <button type="submit" class="btn btn-primary">
                             Submit

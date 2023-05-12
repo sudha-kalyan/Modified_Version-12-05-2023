@@ -21,7 +21,7 @@ public class supplier {
     private String supplierName;
    private String supplierCode;
    private String supAddress1;
-    private String supAddress2;
+    private String supAddress2;//Area Code - Destination
     private String supAddress3;
    private String SupEmail;
    private String supMobile;
@@ -29,8 +29,16 @@ public class supplier {
     private Integer distance;
     private String active = "";
     private String remove;
-    private String sourcedata;
+
     private Integer suplSerial = 0;
     private String GST = "";
+
+    private String shipAddress1;
+    private String shipAddress2;//Area Code - Destination
+    private String shipAddress3;
+
+    private String shipMobile;
+    private String shippinCode;
+    private Integer shipdistance;
 
 }

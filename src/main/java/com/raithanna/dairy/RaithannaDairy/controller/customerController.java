@@ -53,16 +53,16 @@ public class customerController {
 
     @PostMapping("/createCustomer")
     public ModelAndView saveCustomer(Model model, customer Customer) {
-        customer custWithMaxCustno = customerRepository.findTopByOrderByCustnoDesc();
+        customer custWithMaxCustno = customerRepository.findTopByOrderByCustSeriesDesc();
         String result="";
         Integer maxCust_no = 80;
         if (custWithMaxCustno != null) {
-            maxCust_no = custWithMaxCustno.getCustno();
+            maxCust_no = custWithMaxCustno.getCustSeries();
             System.out.println(maxCust_no);
             maxCust_no++;
         }
-        Customer.setCustno(maxCust_no);
-        Customer.setCode("RDML00" + (maxCust_no));
+        Customer.setCustSeries(maxCust_no);
+        Customer.setCustCode("RDML00" + (maxCust_no));
         System.out.println(Customer);
         String mobileNo= Customer.getMobileNo();
         customer existingCheck = customerRepository.findByMobileNo(mobileNo);
@@ -113,7 +113,7 @@ public class customerController {
     public ResponseEntity<?> getCustValues(@RequestParam Map<String, String> body) {
         Map<String, String> respBody = new HashMap<>();
         System.out.println(body);
-        customer Customer = customerRepository.findByCode(body.get("code"));
+        customer Customer = customerRepository.findByCustCode(body.get("code"));
         respBody.putIfAbsent("custName", Customer.getCustName());
         respBody.putIfAbsent("phoneNumber", Customer.getMobileNo());
         respBody.putIfAbsent("Email", Customer.getEmail());
@@ -124,7 +124,7 @@ public class customerController {
     public ResponseEntity<?> customerEdit(@RequestParam Map<String, String> body) {
         Map<String, String> respBody = new HashMap<>();
         System.out.println(body);
-        customer Customer = customerRepository.findByCode(body.get("code"));
+        customer Customer = customerRepository.findByCustCode(body.get("code"));
         Customer.setCustName(body.get("custName"));
         Customer.setMobileNo(body.get("phone"));
         Customer.setEmail(body.get("email"));

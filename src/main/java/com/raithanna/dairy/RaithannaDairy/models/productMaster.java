@@ -27,7 +27,7 @@ public class productMaster implements Comparable {
     private int id;
     private String PCode;
     private String PName;
-    private String prod_type;
+    private String prod_type;//Mapped to PtypeCode of prodType
     private String PStDate;
     private String PEndDate;
     private Double unitRate;

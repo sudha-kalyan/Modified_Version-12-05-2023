@@ -85,6 +85,14 @@ input#custAddr1{
   padding:3px;
   background-colour:#fff;
   }
+   input#custGst{
+  width:250px;
+  border:1px solid blue;
+  border-radius:2px
+  outline:0;
+  padding:3px;
+  background-colour:#fff;
+  }
 
 .header_bar {
     position: top;
@@ -139,13 +147,17 @@ input#custAddr1{
                             <input type="text"  name="Email" id="Email" th:field="*{Email}" class="form-control"/>
                         </div>
                         <div class="col">
-                            <label> Address1</label>
-                            <input  type="text" name="custAddr1" id="custAddr1" th:field="*{custAddr1}"  class="form-control"/>
+                            <label>CustGST</label>
+                            <input  type="text" name="custGst" id="custGst" th:field="*{custGst}"  class="form-control"/>
                         </div>
                     </div>
                     <br>
                     <div class="row auto-align">
                         <br>
+                        <div class="col">
+                            <label> Address1</label>
+                            <input  type="text" name="custAddr1" id="custAddr1" th:field="*{custAddr1}"  class="form-control"/>
+                        </div>
                         <div class="col">
                             <label> Address2</label>
                             <input  type="text" name="custAddr2" id="custAddr2" th:field="*{custAddr2}"  class="form-control"/>
@@ -154,7 +166,7 @@ input#custAddr1{
                             <label>Address3</label>
                             <input type="text" name="custAddr3" id="custAddr3"  th:field="*{custAddr3}" class="form-control"/>
                         </div>
-                        <div class="col-6">
+                        <div class="col">
                             <label>Pin Code</label>
                             <input type="text"  name="custPostCode" id="custPostCode" th:field="*{custPostCode}" class="form-control"/>
                         </div>

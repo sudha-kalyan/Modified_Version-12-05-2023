@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface CustomerRepository extends CrudRepository<customer, Integer> {
     @Query("select * from customer where code=?1 ")
-    customer findByCode(String code);
+    customer findByCustCode(String code);
 
-    customer findTopByOrderByCustnoDesc();
+    customer findTopByOrderByCustSeriesDesc();
     //@Query("select * from customer  order by id desc")
 
 

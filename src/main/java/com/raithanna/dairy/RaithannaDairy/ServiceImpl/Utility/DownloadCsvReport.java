@@ -1,6 +1,7 @@
 package com.raithanna.dairy.RaithannaDairy.ServiceImpl.Utility;
 
 import com.raithanna.dairy.RaithannaDairy.models.DownloadSuperBean;
+import com.raithanna.dairy.RaithannaDairy.models.purchaseOrder;
 import org.supercsv.io.CsvBeanWriter;
 import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class DownloadCsvReport {
 
-    public static void getCsvReportDownload(HttpServletResponse response, String header[], List<? extends DownloadSuperBean> list, String fileName){
+    public static void getCsvReportDownload(HttpServletResponse response, String[] header, List<purchaseOrder> list, String fileName){
 
         try{
             System.out.println("in csv report helper class");
@@ -24,7 +25,7 @@ public class DownloadCsvReport {
             ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);
             csvWriter.writeHeader(header);
 
-            for(DownloadSuperBean superList : list){
+            for(purchaseOrder superList : list){
                 csvWriter.write(superList, header);
             }
 

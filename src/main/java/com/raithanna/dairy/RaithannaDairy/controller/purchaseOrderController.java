@@ -32,7 +32,7 @@ public class purchaseOrderController {
     public String purchaseOrderForm(Model model, HttpSession session) {
         if (session.getAttribute("loggedIn").equals("yes")) {
             List<supplier> Suppliers = supplierRepository.findByOrderByIdDesc();
-            List<purchaseOrder> Amts = purchaseOrderRepository.findByOrderByAmtDesc();
+            //List<purchaseOrder> Amts = purchaseOrderRepository.findByOrderByAmtDesc();
             List<bank> bank = bankRepository.findByOrderByIdDesc();
             List<vehicle> vehicle =vehicleRepository.findByOrderByIdDesc();
             purchaseOrder purchaseOrder = purchaseOrderRepository.findTopByOrderByOrderNoDesc();
@@ -46,7 +46,7 @@ public class purchaseOrderController {
             purchaseOrder po = new purchaseOrder();
             model.addAttribute("purchase", po);
             model.addAttribute("supplier", Suppliers);
-            model.addAttribute("amt", Amts);
+           // model.addAttribute("amt", Amts);
             model.addAttribute("bank", bank);
             model.addAttribute("vehicle", vehicle);
             model.addAttribute("orderNo", orderNo);
@@ -100,7 +100,7 @@ public class purchaseOrderController {
                 subOrder = subOrder+1;
                 purchaseOrder po = new purchaseOrder();
                 // sno from ui
-                po.setSlNo(list.getSlNo());
+               // po.setSlNo(list.getSlNo());
                 po.setInvDate(list.getInvDate());
                 po.setSupplier(list.getSupplier());
                 po.setVehNumber(list.getVehNumber());
@@ -113,11 +113,17 @@ public class purchaseOrderController {
                 po.setAmt(list.getAmt());
                 po.setOrderNo(list.getOrderNo());
                 po.setPaymentStatus(list.getPaymentStatus());
+                po.setBankrefno(list.getBankrefno());
                 po.setBankIfsc(list.getBankIfsc());
                 po.setRecDate(list.getRecDate());
                 po.setSuplCode(list.getSuplCode());
                 po.setInvNo(invNo+subOrder);
-                po.setCode(list.getCode());
+               // po.setCode(list.getCode());
+                po.setInvType(list.getInvType());
+                po.setTmode(list.getTmode());
+                po.setUnit(list.getUnit());
+                po.setPoRefNo(list.getPoRefNo());
+                po.setPoRefDate(list.getPoRefDate());
                 purchaseOrderRepository.save(po);
             }
             return new ModelAndView("/loginPage");

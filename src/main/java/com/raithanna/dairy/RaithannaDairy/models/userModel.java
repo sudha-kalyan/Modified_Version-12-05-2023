@@ -17,7 +17,11 @@ public class userModel {
     @Id
     @GeneratedValue
     private int id;
-    private String name;
+// Unique key - 1 mobilenumber can be attached to only one company
+    @Column(unique = true)
+    private String loginID;//10 digit mobilenumber
+    private String orgCode;
+
     private String username;
     private String password;
     private String email;
@@ -27,8 +31,5 @@ public class userModel {
     private String city;
     private String state;
     private String pincode;
-    @Column(unique = true)
-    private String mobile;
-
 
 }

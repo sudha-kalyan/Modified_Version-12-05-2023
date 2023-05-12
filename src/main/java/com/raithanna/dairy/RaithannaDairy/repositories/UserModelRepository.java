@@ -10,6 +10,6 @@ import java.util.Set;
 
 public interface UserModelRepository extends CrudRepository<userModel, Integer> {
     @Query("select * from user_model where mobile=?1 and password=?2 ")
-    userModel findByMobileAndPassword(String mobile, String password);
+    userModel findByLoginIDAndPassword(String loginID, String password);
 
 }
