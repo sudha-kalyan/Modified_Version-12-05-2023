@@ -80,7 +80,7 @@ input#invDate{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   input#recDate{
@@ -88,7 +88,7 @@ input#invDate{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
 #supplierName{
@@ -96,7 +96,7 @@ input#invDate{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
 input#quantity{
@@ -104,7 +104,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   input#fatP{
@@ -112,7 +112,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   input#snfP{
@@ -120,7 +120,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   input#tsRate{
@@ -128,7 +128,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   #milkType{
@@ -136,7 +136,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   #paymentStatus{
@@ -144,7 +144,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   #vehNumber{
@@ -152,7 +152,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   #bankName{
@@ -160,7 +160,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   #bankIfsc{
@@ -168,7 +168,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   input#ssno{
@@ -176,7 +176,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
    #InvType{
@@ -184,7 +184,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
    #Tmode{
@@ -192,7 +192,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
    #Unit{
@@ -200,7 +200,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
    input#PoRefNo{
@@ -208,7 +208,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
    #PoRefDate{
@@ -216,7 +216,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
    input#bankrefno{
@@ -224,7 +224,7 @@ input#quantity{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
     </style>
@@ -318,8 +318,8 @@ input#quantity{
       <div class="col">
         <label for="InvType">InvType</label>
         <select id="InvType" class="form-control" name="InvType" >
-          <option value="Purchase">Purchase</option>
-          <option value="Sale">Sale</option>
+          <option value="Purchase">Purchase Inv</option>
+          <option value="Sale">Sale Tax Inv</option>
         </select>
       </div>
       <div class="col">
@@ -343,13 +343,21 @@ input#quantity{
                 name="PoRefNo"
                 id="PoRefNo"
                 th:field="*{PoRefNo}"
-                class="form-control"  maxlength="5-12" pattern="\d{5}"
+                class="form-control"  maxlength="10" pattern="\d{10}"
         />
       </div>
       <div class="col">
         <label for="PoRefDate">PO RefDate</label>
-        <input id="PoRefDate" name="PoRefDate" class="form-control" type="date" th:min="${dateTime}" placeholder="dd/mm/yyyy">
+        <input id="PoRefDate" name="PoRefDate" class="form-control" type="date" th:min="${PoRefDate}" placeholder="dd/mm/yyyy">
       </div>
+<!--      <div class="col">-->
+<!--        <label for="TotAmtRound">TotAmtRound</label>-->
+<!--        <input id="TotAmtRound" name="TotAmtRound" class="form-control" type="text" th:min="${TotAmtRound}">-->
+<!--      </div>-->
+<!--      <div class="col">-->
+<!--        <label for="recAmount">RecAmount</label>-->
+<!--        <input id="recAmount" name="recAmount" class="form-control" type="text" th:min="${recAmount}" >-->
+<!--      </div>-->
   </div>
 
       <div class="row auto-align">
@@ -361,7 +369,7 @@ input#quantity{
                     name="bankrefno"
                     id= "bankrefno"
                     th:field="*{PoRefNo}"
-                    class="form-control"  maxlength="5-12" pattern="\d{5}"
+                    class="form-control"  maxlength="12" pattern="\d{12}"
             />
           </div>
         <div class="col-3">
@@ -417,6 +425,10 @@ input#quantity{
     </tbody >
   </table>
 </div>
+<!--<div class="col">-->
+<!--  <h5>TotalNetAmount:<span th:text="${totalNetAmount}" id="totalNetAmount" name="totalNetAmount"></span></h5>-->
+<!--  &lt;!&ndash; <h5>TotNetAmount:<input type="text" id="totalNetAmount" name="totalNetAmount" /></h5>&ndash;&gt;-->
+<!--</div>-->
 <div th:replace="fragments/navbar :: navbar_footer"></div>
 </body>
 <script>
@@ -510,6 +522,14 @@ $("#purchaseTable").append('<tr><td>'+invDate+'</td><td>'+supplierName+'</td><td
     $("td.number").each(function(i,v) {
     $(v).text(i + 1);
 });
+<!--var netAmt=0;-->
+<!--$("table tbody tr").each(function(index)){-->
+<!--var currentRow=$(this).closest("tr");-->
+<!--var amt=parseFloat(currentRow.find("td.eq(9)").text());-->
+<!--netAmt=amt+netAmt;-->
+<!--alert(netAmt);-->
+<!--});-->
+<!--$("#totalNetAmount").html(netAmt.toFixed(2));-->
     });
     // add prod end
 </script>

@@ -33,29 +33,100 @@
     <div class="row auto-align">
     <div class="col">
         <label for="orgName">OrgName</label>
-        <input  type="text"   name="orgName"  id="orgName"   th:field="*{orgName}"    class="form-control"/>
+        <input  type="text"   name="orgName"  id="orgName"   th:field="*{orgName}"    class="form-control" pattern="[A-Za-z]+"/>
     </div>
     <div class="col">
-        <label for="orgAddress1">FAT</label>
-        <input  type="text"  name="orgAddress1"   id="orgAddress1" th:field="*{orgAddress1}" class="form-control" maxlength="4-5" pattern="\d{5}"/>
+        <label for="orgAddress1">Org Address1</label>
+        <input  type="text"  name="orgAddress1"   id="orgAddress1" th:field="*{orgAddress1}" class="form-control" pattern="[A-Za-z]+"/>
     </div>
     <div class="col">
-        <label for="orgAddress1">SNF</label>
-        <input   type="text" name="snfP" id="snfP" th:field="*{snfP}" class="form-control"  maxlength="5-12" pattern="\d{5}"/>
+        <label for="orgAddress2">Org Address2</label>
+        <input   type="text" name="orgAddress2" id="orgAddress2" th:field="*{orgAddress2}" class="form-control" pattern="[A-Za-z]+"/>
     </div>
         <div class="col">
-            <label for="quantity">Qty KG's</label>
-            <input  type="text"   name="quantity"  id="quantity"   th:field="*{quantity}"    class="form-control"/>
+            <label for="orgAddress3">Org Address1</label>
+            <input  type="text"   name="orgAddress3"  id="orgAddress3"   th:field="*{orgAddress3}"    class="form-control" pattern="[A-Za-z]+"/>
         </div>
         <div class="col">
-            <label for="fatP">FAT</label>
-            <input  type="text"  name="fatP"   id="fatP" th:field="*{fatP}" class="form-control" maxlength="4-5" pattern="\d{5}"/>
+            <label for="orgEmail">Org Email</label>
+            <input  type="text"  name="orgEmail"   id="orgEmail" th:field="*{orgEmail}" class="form-control" />
         </div>
+
+    </div>
+    <br>
+        <div class="row auto-align">
+            <div class="col">
+                <label for="orgMobile">Org Mobile</label>
+                <input   type="text" name="orgMobile" id="orgMobile" th:field="*{orgMobile}" class="form-control"  maxlength="10" pattern="\d{10}"/>
+            </div>
         <div class="col">
-            <label for="snfP">SNF</label>
-            <input   type="text" name="snfP" id="snfP" th:field="*{snfP}" class="form-control"  maxlength="5-12" pattern="\d{5}"/>
+            <label for="pinCode">PinCode</label>
+            <input   type="text" name="pinCode" id="pinCode" th:field="*{pinCode}" class="form-control"  maxlength="10" pattern="\d{10}"/>
         </div>
+            <div class="col">
+                <label for="active">Active</label>
+                <select id="active" class="form-control" name=" active" >
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="remove">Remove</label>
+                <select id="remove" class="form-control" name=" remove" >
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+
+                </select>
+            </div>
+
 </div>
+    <br>
+    <div class="row auto-align">
+
+        <div class="col">
+            <label for="orgSerial">PinCode</label>
+            <input   type="text" name="orgSerial" id="orgSerial" th:field="*{ orgSerial}" class="form-control"  maxlength="6" pattern="\d{6}" />
+        </div>
+        <div class="col">
+            <label for="GST">GST</label>
+            <input  type="text"   name="GST"  id="GST"   th:field="*{GST}"    class="form-control" pattern="[A-Za-z]+"/>
+        </div>
+        <div class="col">
+            <label for="orgBankAcctNo">Org BankAccNo</label>
+            <input  type="text"  name="orgBankAcctNo"   id="orgBankAcctNo" th:field="*{orgBankAcctNo}" class="form-control" maxlength="15" pattern="\d{15}" />
+        </div>
+        <div class="col">
+            <label for="orgBankName">Org BankName</label>
+            <input   type="text" name="orgAddress2" id="orgBankName" th:field="*{orgBankName}" class="form-control" pattern="[A-Za-z]+"/>
+        </div>
+
+    </div>
+    <br>
+    <div class="row auto-align">
+        <div class="col">
+            <label for=" orgBankIFSC">Org BankIFSC</label>
+            <input  type="text"   name=" orgBankIFSC"  id=" orgBankIFSC"   th:field="*{ orgBankIFSC}"    class="form-control" pattern="[A-Za-z]+"/>
+        </div>
+        <div class="col">
+            <label for=" orgBankBranch">OrgBank Branch</label>
+            <input  type="text"   name=" orgBankBranch"  id=" orgBankBranch"   th:field="*{ orgBankBranch}"    class="form-control" pattern="[A-Za-z]+"/>
+        </div>
+        <div class="col">
+            <label for="orgBankSWIFT">Org BankSWFT</label>
+            <input  type="text"  name="orgBankSWIFT"   id="orgBankSWIFT" th:field="*{orgBankSWIFT}" class="form-control" pattern="[A-Za-z]+"/>
+        </div>
+
+        <div class="col">
+            <label for="orgAuthorised">Org Autorised</label>
+            <input  type="text"   name="orgAuthorised"  id="orgAuthorised"   th:field="*{orgAuthorised}"    class="form-control" pattern="[A-Za-z]+"/>
+        </div>
+    </div>
+    <br>
+    <div class = "box-footer">
+        <button id="submit" type="" class = "btn btn-primary">
+            Submit
+        </button>
+    </div>
 </div>
 
 </body>

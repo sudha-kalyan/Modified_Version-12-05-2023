@@ -25,11 +25,11 @@
     transform: rotate(-90deg);
 }
 input#vehicleNo{
-  width:250px;
+  width:120px;
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   #capacity{
@@ -37,7 +37,7 @@ input#vehicleNo{
   border:1px solid blue;
   border-radius:2px
   outline:0;
-  padding:2px;
+  padding:1px;
   background-colour:#fff;
   }
   .header_bar {
@@ -73,10 +73,10 @@ input#vehicleNo{
   <hr color="blue">
   <form th:action="@{/vehicle}" th:object="${vehicle}" method="POST">
     <div class="row auto-align">
-      <div class="col">
-        <label>Vehicle Code</label>
-        <input   type="text"  id="vehCode"  th:field="*{vehCode}"  class="form-control"/>
-      </div>
+<!--      <div class="col">-->
+<!--        <label>Vehicle Code</label>-->
+<!--        <input   type="text"  id="vehCode"  th:field="*{vehCode}"  class="form-control"/>-->
+<!--      </div>-->
       <div class="col">
         <label>VehicleNo</label>
         <input   type="text"  id="vehicleNo"  th:field="*{vehicleNo}"  class="form-control"/>

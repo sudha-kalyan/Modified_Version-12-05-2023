@@ -41,7 +41,6 @@ public class purchaseOrder {
     private String PoRefNo;// NA
     private String PoRefDate;//NA
     private Double TotAmtRound;
-
     private String paymentStatus;
     private String bankIfsc;
     private String bankrefno;
